@@ -1,1 +1,139 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap');
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+$primary: rgb(74, 202, 168);
+
+body {
+    margin: 0;
+    font-family: 'Nunito', 'sans-serif';
+    font-size: 18px;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+
+header {
+    z-index: 99 !important;
+    position:sticky;
+    top: 0;
+    width:100%;
+    background: $primary;
+    padding: 1em 0;
+
+    a {
+        color: white;
+        text-decoration: none;
+    }
+
+    
+
+    a.logo {
+        font-weight: bold;
+    }
+
+    nav {
+        float: right;
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            display: flex;
+
+            li a {
+              
+                padding: 1em;
+                &:hover {
+                    background: darken($primary, 10%);
+                }
+            }
+        }
+    }
+}
+
+footer {
+    background: $primary;
+    width: 100%;
+    position:fixed;
+    bottom: 0;
+    height:40px;
+    ul {
+        
+        list-style-type: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            padding:5px 15px;
+            height:30px;
+           
+            &:hover {
+                filter: invert(1);
+            }
+        }
+    }
+}
+
+h1 {
+    margin-top: 1em;
+}
+
+ h2 {
+    margin-top: 1em;
+    color:$primary;
+    font-size: 2.5em;
+}
+
+@media only screen and (max-width: 690px) {
+    footer {
+        transition: width 2s;
+        background: $primary;
+        width: 100%;
+        bottom: 0;
+        height:30px;
+        
+        ul {
+            list-style-type: none;
+            margin: 0;
+            display: flex;
+    
+            img {
+                height:19px;  
+            }
+        }
+    }
+    
+
+    header {
+        padding: .05em 1em 1.5em;
+    
+        a.logo {
+            display:none;
+        }
+    
+        nav {
+           
+            width:120%;
+            ul {   
+                list-style-type: none;
+                display: flexbox;
+                align-items: center;
+                justify-content: center;
+                li a {
+                    padding: 0 35px;
+                    &:hover {
+                        background: darken($primary, 10%);
+                    }
+                }
+            }
+        }
+    }
+
+    h2 {
+        margin-top: .5em;
+        font-size: 2em;
+    }
+}
