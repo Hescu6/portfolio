@@ -12,8 +12,21 @@
       {{card.description}}
     </mat-card-content>
     <mat-card-actions>
-      <button mat-button (click)="openLink([card.webUrl])">View Online</button>
-      <button mat-button (click)="openLink([card.codeUrl])">View Code</button>
+      <button mat-button (click)="openLink([card.webUrl], [card.display])">View Online</button>
+
+      <div *ngIf="card.codeUrl != 'NA'; then thendisplay else elseBlock"></div>
+      <ng-template #thendisplay>
+        <button mat-button (click)="openLink([card.codeUrl], 'web')">View Code</button>
+      </ng-template>
+      <ng-template #elseBlock>
+        
+        <div [matTooltip]="card.blockInfo">
+          <button mat-button disabled>View Code</button>
+         
+        </div>
+      </ng-template>
+
+
     </mat-card-actions>
   </mat-card>
 </div>
