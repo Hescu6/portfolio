@@ -1,3 +1,6 @@
+@import '~@angular/material/theming';
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
 .cardscontainer {
     top: 20px;
     margin-bottom: 35px;
@@ -13,7 +16,7 @@ img {
 }
 
 mat-card {
-    max-width: 250px;
+  max-width: 250px;
     margin:2vw;
     display: inline-block;
   }
