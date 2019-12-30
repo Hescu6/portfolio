@@ -50,11 +50,9 @@ export class ProjectsComponent implements OnInit {
     }
   ];
 
+  openLink(url: string, display?: string) {
 
-
-  openLink(url: string, display: string) {
-
-    if (display == "web") {
+    if (display == "web" || !display) {
       window.open(url, "_blank")
     } else if (display == "dialog") {
       this.openDialog(url);
@@ -63,12 +61,6 @@ export class ProjectsComponent implements OnInit {
 
   openDialog(url: string): void {
 
-
-    // const dialogRef = this.dialog.open(ProjectsDialogComponent, {
-    //   maxWidth: '80%',
-    //   maxHeight: '80%',
-    //   data: url
-    // });
     const dialogConfig = new MatDialogConfig();
     dialogConfig.data = url;
     dialogConfig.height = '85%';
@@ -93,5 +85,5 @@ interface pInfoInterface {
   display: string,
   alt: string,
   description: string,
-  blockInfo?:string
+  blockInfo?: string
 }

@@ -1,6 +1,8 @@
 
 <header id='header'>
+  
   <div class='container'>
+    
     <a href='#' class='logo'>Hildebrando's Portfolio</a>
     <nav>
       <ul>
@@ -20,7 +22,7 @@
 <footer>
   <ul class='container'>
     <li *ngFor="let icon of footerVals">
-      <a title={{icon.alt}} href={{icon.linkurl}} target="_blank">
+      <a [matTooltip]="icon.alt" href={{icon.linkurl}} target="_blank">
         <img src={{icon.iconurl}}>
       </a>
     </li>

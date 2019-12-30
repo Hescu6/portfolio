@@ -12,11 +12,11 @@
       {{card.description}}
     </mat-card-content>
     <mat-card-actions>
-      <button mat-button (click)="openLink([card.webUrl], [card.display])">View Online</button>
+      <button mat-button (click)="openLink(card.webUrl, card.display)">View Online</button>
 
       <div *ngIf="card.codeUrl != 'NA'; then thendisplay else elseBlock"></div>
       <ng-template #thendisplay>
-        <button mat-button (click)="openLink([card.codeUrl], 'web')">View Code</button>
+        <button mat-button (click)="openLink(card.codeUrl)">View Code</button>
       </ng-template>
       <ng-template #elseBlock>
         

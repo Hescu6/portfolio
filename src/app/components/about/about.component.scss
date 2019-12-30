@@ -1,0 +1,28 @@
+@import 'https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css';
+
+.avatar {
+    vertical-align: middle;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+  }
+
+.feature-icons {
+  display: inline-flex;
+  list-style-type: none;
+  margin:.5em auto;
+  i {
+    font-size: 1.5rem;
+  }
+
+  img {
+    width:25px;
+    height:25px;
+  }
+
+}
+
+.about {
+  margin-bottom: 5em;
+}
+
