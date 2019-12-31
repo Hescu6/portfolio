@@ -20,7 +20,7 @@ export class ProjectsComponent implements OnInit {
       title: `Maze Game`,
       webUrl: `https://hescu6.github.io/MazeGame/`,
       codeUrl: `https://github.com/Hescu6/MazeGame`,
-      iconUrl: `./../../../assets/images/iconmaze.png`,
+      iconUrl: `assets/images/iconmaze.png`,
       alt: `Maze`,
       display: 'dialog',
       description: `Classic maze game with multiplayer capabilities, simply open in another tab or
@@ -31,7 +31,7 @@ export class ProjectsComponent implements OnInit {
       title: `Four Square Cipher Encryptor`,
       webUrl: `http://ec2-52-10-153-141.us-west-2.compute.amazonaws.com`,
       codeUrl: `https://github.com/Hescu6/FourCipherEncrpt/tree/master`,
-      iconUrl: `./../../../assets/images/iconfourencode.png`,
+      iconUrl: `assets/images/iconfourencode.png`,
       display: 'dialog',
       alt: `Four Square Cipher`,
       description: `Originally developed in Python, code was then retrofitted
@@ -41,7 +41,7 @@ export class ProjectsComponent implements OnInit {
       title: `UDC Tribute Webpage`,
       webUrl: `https://hescu6.github.io/UDCBasicWebpage/`,
       codeUrl: `https://github.com/Hescu6/UDCBasicWebpage`,
-      iconUrl: `./../../../assets/images/iconudc.png`,
+      iconUrl: `assets/images/iconudc.png`,
       display: 'web',
       alt: `UDC`,
       description: `Tribute webpage for the University of the District of Columbia.

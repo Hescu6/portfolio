@@ -67,7 +67,7 @@ export class AboutComponent implements OnInit {
     },
     {
       title:`BitBucket`,
-      src: `./../../../assets/icons/bitbucket.png`
+      src: `assets/icons/bitbucket.png`
     },
     {
       title: `SSH`,
@@ -95,11 +95,11 @@ export class AboutComponent implements OnInit {
     },
     {
       title:`Confluence`,
-      src: `./../../../assets/icons/confluence.png`
+      src: `assets/icons/confluence.png`
     },
     {
       title:`Bamboo`,
-      src: `./../../../assets/icons/bamboo.png`
+      src: `assets/icons/bamboo.png`
     },
     {
       title:`Express`,

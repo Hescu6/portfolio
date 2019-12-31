@@ -13,18 +13,18 @@ export class AppComponent {
   
   footerVals: footerIcons[] = [
     {
-      iconurl:'./../assets/icons/linkedin32.png',
+      iconurl:'assets/icons/linkedin32.png',
       linkurl:'https://www.linkedin.com/in/hiescudero',
       alt:'Open LinkedIn Profile'
     },
     {
-      iconurl:'./../assets/icons/github32.png',
+      iconurl:'assets/icons/github32.png',
       linkurl:'https://github.com/Hescu6',
       alt:'Open GitHub Repo'
     },
     {
-      iconurl:'./../assets/icons/resume32.png',
-      linkurl:'./../assets/webRes.pdf',
+      iconurl:'assets/icons/resume32.png',
+      linkurl:'assets/webRes.pdf',
       alt:'View Resume'
     }
   ] 
