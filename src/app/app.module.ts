@@ -13,6 +13,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatRippleModule } from '@angular/material/core';
 import { ProjectsDialogComponent } from './components/projects-dialog/projects-dialog.component';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [

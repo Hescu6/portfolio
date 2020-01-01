@@ -1,13 +1,26 @@
 
+  .iframecontainer {
+    position:relative;
+    height:100%;
+    width: 100%;
+    display:block;
+  }
+
+  #IDNAME {
+    -moz-transform: scale(0.25, 0.25); 
+    -moz-transform-origin: top left;
+  }
+  
   iframe {
     width:90%;
     height:90%;
-    display:block;
+    display:flexbox;
     margin:0 auto;
     position:relative;
+    overflow:hidden;
   }
 
   button {   
-    display:block;
-	margin:1em  auto ;
+    display:flex;
+	  margin:1em  auto ;
   }

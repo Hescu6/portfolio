@@ -17,6 +17,36 @@ export class ProjectsComponent implements OnInit {
 
   pInfo: pInfoInterface[] = [
     {
+      title: `Workflow Builder`,
+      webUrl: `https://wfnpr.herokuapp.com/`,
+      codeUrl: `NA`,
+      iconUrl: `assets/images/iconworkflow.png`,
+      display: 'web',
+      alt: `NPR Workflow Builder`,
+      description: `Workflow builder for NPR's internal orchestrator. A different
+      API was developed to perform CRUD operations on a set of sample workflows. User can load,
+      edit, create, and save a different workflow. Upon saving, the workflow is displayed on 
+      the console. Application was build with Angular 8 and JointJs, the custom API was deployed
+      with Express and Heroku`,
+      blockInfo:`Code not available, I was allowed to take a
+       modified version upon completing the internship`
+    },
+    {
+      title: `Portfolio API`,
+      webUrl: `https://hescu6server.herokuapp.com/`,
+      codeUrl: `NA`,
+      iconUrl: `assets/images/iconworkflow.png`,
+      display: 'web',
+      alt: `NPR Workflow Builder`,
+      description: `Workflow builder for NPR's internal orchestrator. A different
+      API was developed to perform CRUD operations on a set of sample workflows. User can load,
+      edit, create, and save a different workflow. Upon saving, the workflow is displayed on 
+      the console. Application was build with Angular 8 and JointJs, the custom API was deployed
+      with Express and Heroku`,
+      blockInfo:`Code not available, I was allowed to take a
+       modified version upon completing the internship`
+    },
+    {
       title: `Maze Game`,
       webUrl: `https://hescu6.github.io/MazeGame/`,
       codeUrl: `https://github.com/Hescu6/MazeGame`,
@@ -32,7 +62,7 @@ export class ProjectsComponent implements OnInit {
       webUrl: `http://ec2-52-10-153-141.us-west-2.compute.amazonaws.com`,
       codeUrl: `https://github.com/Hescu6/FourCipherEncrpt/tree/master`,
       iconUrl: `assets/images/iconfourencode.png`,
-      display: 'dialog',
+      display: 'web',
       alt: `Four Square Cipher`,
       description: `Originally developed in Python, code was then retrofitted
       to work as a web application using PHP and AWS Elastic Beanstalk.`
