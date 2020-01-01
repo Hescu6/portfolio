@@ -24,27 +24,21 @@ export class ProjectsComponent implements OnInit {
       display: 'web',
       alt: `NPR Workflow Builder`,
       description: `Workflow builder for NPR's internal orchestrator. A different
-      API was developed to perform CRUD operations on a set of sample workflows. User can load,
-      edit, create, and save a different workflow. Upon saving, the workflow is displayed on 
-      the console. Application was build with Angular 8 and JointJs, the custom API was deployed
-      with Express and Heroku`,
+      API was developed to perform CRUD operations on a set of sample workflows. Upon saving, 
+      the workflow is displayed on the console. Application was build with Angular 8 and JointJs`,
       blockInfo:`Code not available, I was allowed to take a
        modified version upon completing the internship`
     },
     {
-      title: `Portfolio API`,
+      title: `Portfolio API server`,
       webUrl: `https://hescu6server.herokuapp.com/`,
-      codeUrl: `NA`,
-      iconUrl: `assets/images/iconworkflow.png`,
-      display: 'web',
-      alt: `NPR Workflow Builder`,
-      description: `Workflow builder for NPR's internal orchestrator. A different
-      API was developed to perform CRUD operations on a set of sample workflows. User can load,
-      edit, create, and save a different workflow. Upon saving, the workflow is displayed on 
-      the console. Application was build with Angular 8 and JointJs, the custom API was deployed
-      with Express and Heroku`,
-      blockInfo:`Code not available, I was allowed to take a
-       modified version upon completing the internship`
+      codeUrl: `https://github.com/Hescu6/server`,
+      iconUrl: `assets/images/iconapi.png`,
+      display: 'dialog',
+      alt: `Portfolio API server`,
+      description: `General purpose API server for the portfolio and other applications. 
+      Developed with Express and deployed with Heroku`,
+      blockInfo:``
     },
     {
       title: `Maze Game`,
@@ -52,7 +46,7 @@ export class ProjectsComponent implements OnInit {
       codeUrl: `https://github.com/Hescu6/MazeGame`,
       iconUrl: `assets/images/iconmaze.png`,
       alt: `Maze`,
-      display: 'dialog',
+      display: 'web',
       description: `Classic maze game with multiplayer capabilities, simply open in another tab or
     device and play.Developed using JQuery, JavaScript, and
     Firebase cloud services`

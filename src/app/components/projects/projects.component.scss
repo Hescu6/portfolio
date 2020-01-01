@@ -16,15 +16,19 @@ img {
 }
 
 mat-card {
-  max-width: 250px;
-    margin:2vw;
-    display: inline-block;
-  }
+  max-width: 300px;
+  margin:2vw;
+  display: inline-block;
+}
 
   .example-header-image {
     background-size: cover;
   }
 
-  @media only screen and (max-width: 690px) {
- 
+  @media only screen and (min-width: 750px) {
+    mat-card {
+      max-width: 250px;
+      margin:2vw;
+      display: inline-block;
+    }
 }
