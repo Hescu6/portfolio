@@ -5,7 +5,7 @@
   "scripts": {
     "electron": "ng build --base-href ./ && electron .",
     "ng": "ng",
-    "start": "nodemon server.js",
+    "start": "ng serve -o",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
