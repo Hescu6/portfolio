@@ -17,9 +17,9 @@ export class AboutComponent implements OnInit {
   title: string = `Software Developer`;
 
   intro: string = `My name is Hildebrando and I'm a software developer 
-                  in the Washington DC area. 
-                  I'm well organized and I love to solve problems
-                  with high attention to detail. I continuously 
+                  in the Washington DC area. I love to solve problems that
+                   require great attention to detail. 
+                  I'm well organized and continuously 
                   seek opportunities to advance my growth in the
                    tech industry.`;
 
