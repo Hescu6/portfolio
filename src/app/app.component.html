@@ -1,8 +1,7 @@
-
 <header id='header'>
-  
+
   <div class='container'>
-    
+    <!-- remove reouterLink'/about' -->
     <a href='#' routerLink='/about' class='logo'>Hildebrando's Portfolio</a>
     <nav>
       <ul>
@@ -20,11 +19,23 @@
 </div>
 
 <footer>
-  <ul class='container'>
-    <li *ngFor="let icon of footerVals">
-      <a [matTooltip]="icon.alt" href={{icon.linkurl}} target="_blank">
-        <img src={{icon.iconurl}}>
-      </a>
-    </li>
-  </ul>
+  <nav>
+    <ul class='container'>
+      <li *ngFor="let icon of footerVals">
+
+        <div *ngIf="icon.weburl; then thenurl else elsedialog"></div>
+        <ng-template #thenurl>
+          <a [matTooltip]="icon.alt" href={{icon.weburl}} target="_blank">
+            <img src={{icon.iconurl}}>
+          </a>
+        </ng-template>
+        <ng-template #elsedialog>
+          <a [matTooltip]="icon.alt" (click)="openDialog(icon.open)">
+            <img src={{icon.iconurl}}>
+          </a>
+        </ng-template>
+
+      </li>
+    </ul>
+  </nav>
 </footer>

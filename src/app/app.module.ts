@@ -10,10 +10,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule, MatDialogConfig } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
-import { MatRippleModule } from '@angular/material/core';
+import { MatRippleModule, MatOptionModule } from '@angular/material/core';
 import { ProjectsDialogComponent } from './components/projects-dialog/projects-dialog.component';
-import {MatTooltipModule} from '@angular/material/tooltip';
-import { RouterModule } from '@angular/router';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { ContactDialogComponent } from './components/contact-dialog/contact-dialog.component';
+import { MatFormFieldModule, MatSelectModule, MatInputModule } from '@angular/material';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,21 +26,31 @@ import { RouterModule } from '@angular/router';
     ProjectsDialogComponent,
     AboutComponent,
     HomeComponent,
+    ContactDialogComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     MatCardModule,
     MatButtonModule,
     MatRippleModule,
     MatDialogModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatFormFieldModule,
+    MatOptionModule,
+    MatInputModule,
+    MatSelectModule,
+    MatProgressSpinnerModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
   entryComponents: [
-    ProjectsDialogComponent
+    ProjectsDialogComponent,
+    ContactDialogComponent
   ]
 })
 export class AppModule { }

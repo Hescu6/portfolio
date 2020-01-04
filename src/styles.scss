@@ -67,7 +67,7 @@ footer {
     ul {
         
         list-style-type: none;
-        display:inline-table;
+margin: 0 auto;
        
 
        li{
@@ -102,15 +102,8 @@ b {
 
 @media only screen and (max-width: 690px) {
     footer {
-   
-        bottom: 0;
-        left: 0;
-        height:30px;
-        
-        
-        ul {
-          
-            
+        height:30px;     
+        ul {     
             img {
                 height:19px;  
             }

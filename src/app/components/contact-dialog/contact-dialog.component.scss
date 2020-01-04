@@ -1,0 +1,37 @@
+.contactcontainer{
+    width: 90%;
+    margin:0 auto;
+}
+
+mat-form-field {
+    display:block;
+    margin: 1em auto;
+}
+button {
+    bottom:0;
+    margin: 4px;
+}
+
+.spinner {
+    display:none;
+    
+}
+
+.dialogcontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sucess {
+    position: relative;
+    margin:0 auto;
+    display:none;
+}
+
+.error{
+    position: relative;
+    margin:0 auto;
+    display:none;
+}
+

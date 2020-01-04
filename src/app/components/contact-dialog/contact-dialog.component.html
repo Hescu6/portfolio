@@ -1,0 +1,51 @@
+<div class="dialogcontainer">
+
+    <div class="contactcontainer">
+
+        <h1>Send me an Email</h1>
+
+        <form class="contactform" [formGroup]="contactGroup">
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Your Email" formControlName="emailFormControl"
+                    [errorStateMatcher]="matcher" required>
+                <mat-hint>Enter your Email</mat-hint>
+                <mat-error
+                    *ngIf="contactGroup.get('emailFormControl').hasError('email') && !contactGroup.get('emailFormControl').hasError('required')">
+                    Please enter a valid email address
+                </mat-error>
+                <mat-error *ngIf="contactGroup.get('emailFormControl').hasError('required')">
+                    Email is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+
+
+            <mat-form-field>
+                <input matInput placeholder="Your name" formControlName="nameFormControl" required>
+            </mat-form-field>
+
+
+            <mat-form-field class="message">
+                <textarea matInput placeholder="Leave a message" formControlName="messageFormControl"
+                    required></textarea>
+            </mat-form-field>
+
+        </form>
+
+        <!-- <button mat-stroked-button  type="submit" [disabled]="!emailFormControl.valid || !messageFormControl.valid || !nameFormControl.valid" [disabled]="!messageFormControl.valid">Send</button> -->
+        <button mat-stroked-button type="submit" (click)="onSubmit(contactGroup)"
+            [disabled]="contactGroup.invalid">Send</button>
+        <button mat-stroked-button color="warn" (click)="closeClick()">Cancel</button>
+
+    </div>
+
+    <mat-spinner class="spinner"></mat-spinner>
+
+    <div class="sucess">
+        <h1>Message Sent</h1><img src="./../../../assets/images/emailsent.gif">
+    </div>
+    <div class="error">
+        <h1>Something wrong, check browser console</h1><img src="./../../../assets/images/travoltawonder.gif">
+    </div>
+
+
+</div>
