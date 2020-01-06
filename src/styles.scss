@@ -12,7 +12,6 @@ body {
 .container {
     width: 80%;
     margin: 0 auto;
-    text-align: center;
 }
 
 
@@ -62,16 +61,13 @@ footer {
     position:fixed;
     bottom: 0;
     height:40px;
- 
-   
-
     ul {
         
         list-style-type: none;
-      
+        text-align: center;
+        padding: 0;
        li{
-        display:inline-block;
-       
+        display:inline-flex;
        }
       
         img {
