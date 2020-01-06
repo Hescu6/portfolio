@@ -3,6 +3,11 @@
     margin:0 auto;
 }
 
+
+.title {
+    font-size: 1.5em
+}
+
 mat-form-field {
     display:block;
     margin: 1em auto;
@@ -13,8 +18,8 @@ button {
 }
 
 .spinner {
-    display:none;
-    
+    display: none;
+    top:9em;
 }
 
 .dialogcontainer {
@@ -24,14 +29,22 @@ button {
 }
 
 .sucess {
-    position: relative;
-    margin:0 auto;
     display:none;
+    margin:0 auto;
+    text-align: center;
+    
 }
 
 .error{
-    position: relative;
-    margin:0 auto;
     display:none;
+    margin:0 auto;
+    text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+    h1.title {
+        font-size: 1em;
+    }
+
 }
 
