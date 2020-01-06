@@ -44,7 +44,7 @@ export class AppComponent {
     const dialogConfig = new MatDialogConfig();
     // dialogConfig.data = url;
     dialogConfig.height = '70%';
-    dialogConfig.width = '50%';
+    dialogConfig.width = '60em';
     dialogConfig.autoFocus = true;
 
     const dialogRef = this.dialog.open(ContactDialogComponent, dialogConfig);
