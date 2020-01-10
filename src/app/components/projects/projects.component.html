@@ -17,11 +17,11 @@
 
       <div *ngIf="card.webUrl != 'NA'; then thendisplayweb else elseBlockweb"></div>
       <ng-template #thendisplayweb>
-        <button mat-button (click)="openLink(card.webUrl, card.display)">View Online</button>
+        <button mat-raised-button (click)="openLink(card.webUrl, card.display)">View Online</button>
       </ng-template>
       <ng-template #elseBlockweb>
         <div [matTooltip]="card.blockInfo">
-          <button mat-button disabled>View Website</button>
+          <button mat-raised-button disabled>View Website</button>
         </div>
       </ng-template>
 
@@ -29,11 +29,11 @@
 
       <div *ngIf="card.codeUrl != 'NA'; then thendisplaycode else elseBlockcode"></div>
       <ng-template #thendisplaycode>
-        <button mat-button (click)="openLink(card.codeUrl)">View Code</button>
+        <button mat-raised-button (click)="openLink(card.codeUrl)">View Code</button>
       </ng-template>
       <ng-template #elseBlockcode>
         <div [matTooltip]="card.blockInfo">
-          <button mat-button disabled>View Code</button>
+          <button mat-raised-button disabled>View Code</button>
         </div>
       </ng-template>
 

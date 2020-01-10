@@ -18,6 +18,7 @@ import { MatFormFieldModule, MatSelectModule, MatInputModule } from '@angular/ma
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { MapsComponent } from './components/maps/maps.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { HttpClientModule } from '@angular/common/http';
     AboutComponent,
     HomeComponent,
     ContactDialogComponent,
+    MapsComponent,
   ],
   imports: [
     BrowserModule,
