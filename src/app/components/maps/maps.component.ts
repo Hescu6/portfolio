@@ -26,12 +26,12 @@ export class MapsComponent implements OnInit {
       console.log("coords = ", lat, lon);
 
       const userIcon = L.icon({
-        iconUrl: "./../../assets/icons/userlocation.png",
+        iconUrl: "assets/icons/userlocation.png",
         iconSize: [25, 25]
       });
 
       const hilIcon = L.icon({
-        iconUrl: "./../../assets/icons/hillocation.png",
+        iconUrl: "assets/icons/hillocation.png",
         iconSize: [24, 24]
       });
 
@@ -71,7 +71,7 @@ export class MapsComponent implements OnInit {
 
   initMap() {
     const hilIcon = L.icon({
-      iconUrl: "./../../assets/icons/hillocation.png",
+      iconUrl: "assets/icons/hillocation.png",
       iconSize: [24, 24]
     });
 
