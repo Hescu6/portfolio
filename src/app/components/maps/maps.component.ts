@@ -2,8 +2,8 @@ import { Component, AfterViewInit, OnInit, OnDestroy } from "@angular/core";
 import * as L from "leaflet";
 import { LocationService } from "src/app/services/location.service";
 import { MapconfigService } from "src/app/services/mapconfig.service";
-import { ApiService } from "src/app/services/Api.service";
-import { stringify } from 'querystring';
+import { ApiService } from "src/app/services/api.service";
+import { stringify } from "querystring";
 
 @Component({
   selector: "app-maps",
@@ -32,7 +32,7 @@ export class MapsComponent implements OnInit, OnDestroy {
 
   showLocation() {
     clearInterval(this.issInterval);
-
+    
     this.location.getMyLocation().subscribe(position => {
       let lon: number = position.coords.longitude;
       let lat: number = position.coords.latitude;
@@ -49,6 +49,7 @@ export class MapsComponent implements OnInit, OnDestroy {
         center: [lat, lon],
         zoom: 7
       });
+      this.showWeather();
 
       const hilmarker = L.marker([0, 0], { icon: hilIcon })
         .addTo(this.map)
@@ -73,6 +74,7 @@ export class MapsComponent implements OnInit, OnDestroy {
   }
 
   showIss() {
+    
     clearInterval(this.issInterval);
 
     this.map.off();
@@ -82,6 +84,7 @@ export class MapsComponent implements OnInit, OnDestroy {
       center: [0, 0],
       zoom: 1
     });
+    this.showWeather();
     const urlIssApi = "https://api.wheretheiss.at/v1/satellites/25544";
     const issIcon = this.mapconfig.getIcon("iss");
 
@@ -101,13 +104,14 @@ export class MapsComponent implements OnInit, OnDestroy {
   }
 
   initMap() {
+    
     const hilIcon = this.mapconfig.getIcon("hil");
 
     this.map = L.map("map", {
       center: [this.hilLat, this.hilLon],
       zoom: 9
     });
-
+    this.showWeather();
     const tiles = this.mapconfig.getTiles();
 
     const marker = L.marker([0, 0], { icon: hilIcon })
@@ -128,28 +132,41 @@ export class MapsComponent implements OnInit, OnDestroy {
       lat = coord.lat;
       lon = coord.lng;
       console.log(
-        "You clicked on: " + lat + " and longitude: " + lon +" right on " + e.target
+        "You clicked on: " +
+          lat +
+          " and longitude: " +
+          lon +
+          " right on " +
+          e.target
       );
 
       this.apiService.getWeather(lat, lon).subscribe(
         data => {
           console.log(data);
-          L.popup()
-            .setLatLng(e.latlng)
-            .setContent(
-              `
+          let reverseGeo =
+            data["reverseGeo"]["results"].length == 0
+              ? data["timezone"]
+              : `${data["reverseGeo"]["results"][0]["address_components"]["city"]},
+                  ${data["reverseGeo"]["results"][0]["address_components"]["state"]},
+                  ${data["reverseGeo"]["results"][0]["address_components"]["country"]}`;
+
+          if (!data["error"]) {
+            L.popup()
+              .setLatLng(e.latlng)
+              .setContent(
+                `
+                <strong>${reverseGeo}</strong><br>
                 ${data["currently"]["summary"]}<br>
                 ${data["currently"]["temperature"]}&#8457
                 feels like ${data["currently"]["apparentTemperature"]}&#8457
               `
-            )
-            .addTo(this.map)
-            .openOn(this.map);
+              )
+              .addTo(this.map)
+              .openOn(this.map);
+          } 
         },
-        err => console.error(err),
-        () => console.log("Temperature")
+        err => console.error(err)
       );
-
     });
   }
 }

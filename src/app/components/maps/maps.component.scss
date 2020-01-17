@@ -21,11 +21,26 @@
   margin: 0.2em;
 }
 
-@media only screen and (max-width: 690px) {
-  .map-container {
-    right: auto;
-    width: 100%;
-    min-width: 300px;
-    min-height: 200px;
+@media only screen and (min-width: 690px) {
+  .map-container, #map, .map-frame {
+    right: auto;   
+    max-width: 450px;
+    max-height: 350px;
   }
+
+  .map-container {
+    padding: 1em;
+  }
+
+}
+
+@media only screen and (max-width: 690px) {
+  .map-container, #map, .map-frame {
+  
+    width:480px;
+    height: 250px;
+  }
+
+
+
 }

@@ -1,8 +1,7 @@
 <div class="map-container">
-  <div class="map-frame">
-    <div id="map"></div>
-    <button id='yourlocation' mat-raised-button (click)="showLocation()">Your Location</button>
-    <button id='yourlocation' mat-raised-button (click)="showWeather()">Weather</button>
-    <button id='yourlocation' mat-raised-button (click)="showIss()">ISS Location</button>
+  <div class="map-frame" >
+    <div id="map" matTooltip="Click on map to show weather" matTooltipPosition='left'></div>
+    <button id='yourlocation' matTooltip="Display our locations on the map" mat-raised-button (click)="showLocation()">Your Location</button>
+    <button id='yourlocation' matTooltip="Show the location of the International Space Station LIVE" mat-raised-button (click)="showIss()">ISS Location</button>
   </div>
 </div>

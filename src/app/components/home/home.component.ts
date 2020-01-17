@@ -12,4 +12,8 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
+  about:string = `I'm a Software Developer based in the DMV area (Washington D.C). I
+  LOVE building interactive web apps and I'm extremely curious about how things work.
+  Feel free to shoot me a line or two in the message icon below.`
+
 }

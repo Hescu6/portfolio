@@ -1,10 +1,28 @@
-<div class="containerhome">
-
-
-  <div class="map">
-    <app-maps></app-maps>
-    <div id="spacer"></div>
+<div class='containerhome'>
+  <div class="profile">
+    <div class="helper">
+      <img src="assets/images/selfphoto.jpg" class="avatar" />
+      <div class="titles">
+        <h2 class="name">Hildebrando Escudero</h2>
+        <p>
+          <b>Software Developer in the Washington DC area</b>
+        </p>
+      </div>
+    </div>
+    <hr />
   </div>
 
-  
+  <div class="containerlocation">
+    <div class="about">
+      <p>
+        <b>A little about me</b> <br /><br />
+        {{ about }}
+      </p>
+    </div>
+
+    <div class="map">
+      <app-maps></app-maps>
+      <div id="spacer"></div>
+    </div>
+  </div>
 </div>
