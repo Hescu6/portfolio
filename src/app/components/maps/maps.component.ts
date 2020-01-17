@@ -1,6 +1,7 @@
 import { Component, AfterViewInit, OnInit } from "@angular/core";
 import * as L from "leaflet";
 import { LocationService } from "src/app/services/location.service";
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: "app-maps",
@@ -80,12 +81,22 @@ export class MapsComponent implements OnInit {
       zoom: 7
     });
 
+
+    var tiles = L.tileLayer(`https://{s}.tile.thunderforest.com/pioneer/{z}/{x}/{y}.png?apikey=${environment.THUNDERFOREST_API_KEY}`, {
+      attribution: '&copy; <a href="http://www.thunderforest.com/">Thunderforest</a>, &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      apikey: environment.THUNDERFOREST_API_KEY,
+      maxZoom: 22
+    });
+
+
     const marker = L.marker([0, 0], { icon: hilIcon })
       .addTo(this.map)
       .bindTooltip("Hildebrando's Location")
       .openTooltip()
       .setLatLng([this.hilLat, this.hilLon]);
-    const tiles = L.tileLayer(
+    
+    
+      const tiles2 = L.tileLayer(
       "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
       {
         maxZoom: 19,

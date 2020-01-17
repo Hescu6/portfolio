@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  THUNDERFOREST_API_KEY:'b53dfb6a756046efa247ef1a093cfdae'
 };
 
 /*

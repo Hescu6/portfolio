@@ -1,8 +1,10 @@
 .map-container {
   position: absolute;
-  width: 8em;
-  height: 5em;
-  right: 0;
+  display:block;
+  width: 45vw;
+  height: 30vw;
+  right: 1em;
+  top: 1em;
 }
 
 .map-frame {
@@ -12,4 +14,19 @@
 
 #map {
   height: 100%;
+}
+
+
+#yourlocation {
+  top: .5em;
+}
+
+@media only screen and (max-width: 690px) {
+  .map-container {
+    right:auto;
+    width:100%;
+    min-width: 300px;
+    min-height:200px;
+  }
+
 }

@@ -1,44 +1,34 @@
 <div class="container">
+  <h2 class="title">
+    About Me
+    <img src="assets/images/selfphoto.jpg" class="avatar" />
+  </h2>
 
-    <h2 class= "title">About Me
-        <img src='assets/images/selfphoto.jpg' class='avatar'>
+  <div class="content">
+    <p>
+      <b>{{ title }}</b>
+    </p>
 
-        <div class='map'>
-            <app-maps></app-maps>
-            <div id="spacer"></div>
-        </div>
-
-
-    </h2>
-
-
-
-
-
-    <div class="content">
-    <p><b>{{title}}</b></p>
-
-    <p>{{intro}}</p>
-    <br>
+    <p>{{ intro }}</p>
+    <br />
 
     <div class="about">
-        <p><b>Skills</b></p>
-        <p>{{skillsIntro}}</p>
+      <p><b>Skills</b></p>
+      <p>{{ skillsIntro }}</p>
 
-        <ul *ngFor="let skill of skillsIcons" class="feature-icons">
-
-            <li>
-                <p class="hide-text" title={{skill.title}}></p>
-                <div *ngIf="skill.path; then skillPath else skillSrc"> </div>
-                <ng-template #skillPath>
-                    <i class={{skill.path}}></i>
-                </ng-template>
-                <ng-template #skillSrc>
-                    <img src={{skill.src}}>
-                </ng-template>
-                {{skill.title}}
-            </li>
-        </ul>
+      <ul *ngFor="let skill of skillsIcons" class="feature-icons">
+        <li>
+          <p class="hide-text" title="{{ skill.title }}"></p>
+          <div *ngIf="skill.path; then skillPath; else skillSrc"></div>
+          <ng-template #skillPath>
+            <i class="{{ skill.path }}"></i>
+          </ng-template>
+          <ng-template #skillSrc>
+            <img src="{{ skill.src }}" />
+          </ng-template>
+          {{ skill.title }}
+        </li>
+      </ul>
     </div>
-</div>
+  </div>
 </div>
