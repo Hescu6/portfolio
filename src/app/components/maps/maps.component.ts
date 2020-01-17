@@ -1,40 +1,49 @@
-import { Component, AfterViewInit, OnInit } from "@angular/core";
+import { Component, AfterViewInit, OnInit, OnDestroy } from "@angular/core";
 import * as L from "leaflet";
 import { LocationService } from "src/app/services/location.service";
-import { environment } from 'src/environments/environment';
+import { MapconfigService } from "src/app/services/mapconfig.service";
+import { ApiService } from "src/app/services/Api.service";
+import { stringify } from 'querystring';
 
 @Component({
   selector: "app-maps",
   templateUrl: "./maps.component.html",
   styleUrls: ["./maps.component.scss"]
 })
-export class MapsComponent implements OnInit {
+export class MapsComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.initMap();
   }
+
+  ngOnDestroy() {
+    clearInterval(this.issInterval);
+  }
+
+  private issInterval;
   private map;
   hilLon: number = -77.02118;
   hilLat: number = 38.9523;
 
-  constructor(private location: LocationService) {}
+  constructor(
+    private location: LocationService,
+    private mapconfig: MapconfigService,
+    private apiService: ApiService
+  ) {}
 
   showLocation() {
-    this.map.off();
-    this.map.remove();
+    clearInterval(this.issInterval);
+
     this.location.getMyLocation().subscribe(position => {
       let lon: number = position.coords.longitude;
       let lat: number = position.coords.latitude;
       console.log("coords = ", lat, lon);
 
-      const userIcon = L.icon({
-        iconUrl: "assets/icons/userlocation.png",
-        iconSize: [25, 25]
-      });
+      this.map.off();
+      this.map.remove();
 
-      const hilIcon = L.icon({
-        iconUrl: "assets/icons/hillocation.png",
-        iconSize: [24, 24]
-      });
+      const userIcon = this.mapconfig.getIcon("user");
+
+      const hilIcon = this.mapconfig.getIcon("hil");
 
       this.map = L.map("map", {
         center: [lat, lon],
@@ -55,56 +64,92 @@ export class MapsComponent implements OnInit {
 
       let group = L.featureGroup([hilmarker, usermarker]);
 
-      this.map.fitBounds(group.getBounds());
+      this.map.fitBounds(group.getBounds().pad(0.1));
 
-      const tiles = L.tileLayer(
-        "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-        {
-          maxZoom: 19,
-          attribution:
-            '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-        }
-      );
+      const tiles = this.mapconfig.getTiles();
 
       tiles.addTo(this.map);
     });
   }
 
-  initMap() {
-    const hilIcon = L.icon({
-      iconUrl: "assets/icons/hillocation.png",
-      iconSize: [24, 24]
+  showIss() {
+    clearInterval(this.issInterval);
+
+    this.map.off();
+    this.map.remove();
+
+    this.map = L.map("map", {
+      center: [0, 0],
+      zoom: 1
     });
+    const urlIssApi = "https://api.wheretheiss.at/v1/satellites/25544";
+    const issIcon = this.mapconfig.getIcon("iss");
+
+    const tiles = this.mapconfig.getTiles();
+    tiles.addTo(this.map);
+    const marker = L.marker([0, 0], { icon: issIcon }).addTo(this.map);
+
+    async function getIssLoc() {
+      const response = await fetch(urlIssApi);
+      const data = await response.json();
+      const { latitude, longitude } = data;
+      marker.setLatLng([latitude, longitude]);
+      console.log("api");
+    }
+
+    this.issInterval = setInterval(getIssLoc, 10000);
+  }
+
+  initMap() {
+    const hilIcon = this.mapconfig.getIcon("hil");
 
     this.map = L.map("map", {
       center: [this.hilLat, this.hilLon],
-      zoom: 7
+      zoom: 9
     });
 
-
-    var tiles = L.tileLayer(`https://{s}.tile.thunderforest.com/pioneer/{z}/{x}/{y}.png?apikey=${environment.THUNDERFOREST_API_KEY}`, {
-      attribution: '&copy; <a href="http://www.thunderforest.com/">Thunderforest</a>, &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-      apikey: environment.THUNDERFOREST_API_KEY,
-      maxZoom: 22
-    });
-
+    const tiles = this.mapconfig.getTiles();
 
     const marker = L.marker([0, 0], { icon: hilIcon })
       .addTo(this.map)
       .bindTooltip("Hildebrando's Location")
       .openTooltip()
       .setLatLng([this.hilLat, this.hilLon]);
-    
-    
-      const tiles2 = L.tileLayer(
-      "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-      {
-        maxZoom: 19,
-        attribution:
-          '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-      }
-    );
 
     tiles.addTo(this.map);
+  }
+
+  showWeather() {
+    var lat: number;
+    var lon: number;
+
+    this.map.on("click", async e => {
+      var coord = e.latlng;
+      lat = coord.lat;
+      lon = coord.lng;
+      console.log(
+        "You clicked on: " + lat + " and longitude: " + lon +" right on " + e.target
+      );
+
+      this.apiService.getWeather(lat, lon).subscribe(
+        data => {
+          console.log(data);
+          L.popup()
+            .setLatLng(e.latlng)
+            .setContent(
+              `
+                ${data["currently"]["summary"]}<br>
+                ${data["currently"]["temperature"]}&#8457
+                feels like ${data["currently"]["apparentTemperature"]}&#8457
+              `
+            )
+            .addTo(this.map)
+            .openOn(this.map);
+        },
+        err => console.error(err),
+        () => console.log("Temperature")
+      );
+
+    });
   }
 }
