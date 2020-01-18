@@ -5,6 +5,17 @@
     top: 20px;
     margin-bottom: 35px;
     text-align: center;
+    
+}
+
+
+.project-card{
+  background-color:#44484e;
+  color:white;
+}
+
+mat-card-title{
+  color: #efbb35;
 }
 
 mat-card-header {
@@ -19,6 +30,7 @@ mat-card {
   max-width: 300px;
   margin:2vw;
   display: inline-block;
+  
 }
 
   .example-header-image {

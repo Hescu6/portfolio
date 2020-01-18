@@ -3,9 +3,12 @@
   transform: scale(1);
 }
 
+.containerhome {
+  bottom:20px;
+}
 #spacer {
   width: 50%;
-  height: 45em;
+  height:23em;
   display: inline-block;
 }
 
@@ -78,6 +81,6 @@ img {
 
 @media only screen and (max-width: 690px) {
   .map {
-    margin: 0 auto; 
+    margin: 0 auto;
   }
 }

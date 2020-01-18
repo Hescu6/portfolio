@@ -10,6 +10,7 @@
 .map-frame {
   border: 2px solid black;
   height: 100%;
+
 }
 
 #map {
@@ -49,7 +50,7 @@
   .map-container,
   #map,
   .map-frame {
-    width: 320px;
+    width: 310px;
     height: 200px;
   }
 }
@@ -58,7 +59,7 @@
   .map-container,
   #map,
   .map-frame {
-    width: 270px;
+    width: 260px;
     height: 200px;
   }
 }

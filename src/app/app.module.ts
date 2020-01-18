@@ -19,6 +19,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MapsComponent } from './components/maps/maps.component';
+import { BackgroundComponent } from './components/background/background.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { MapsComponent } from './components/maps/maps.component';
     HomeComponent,
     ContactDialogComponent,
     MapsComponent,
+    BackgroundComponent,
   ],
   imports: [
     BrowserModule,
