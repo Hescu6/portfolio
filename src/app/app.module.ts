@@ -20,6 +20,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MapsComponent } from './components/maps/maps.component';
 import { BackgroundComponent } from './components/background/background.component';
+import { MarketsComponent } from './components/markets/markets.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { BackgroundComponent } from './components/background/background.componen
     ContactDialogComponent,
     MapsComponent,
     BackgroundComponent,
+    MarketsComponent,
   ],
   imports: [
     BrowserModule,

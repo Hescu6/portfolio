@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
 @import "~leaflet/dist/leaflet.css";
 
 $primary: rgb(0, 0, 0);
@@ -6,7 +6,7 @@ $primary: rgb(0, 0, 0);
 body {
     background: #222831;
     margin: 0 auto;
-    font-family: 'roboto thin';
+    font-family: 'Ubuntu', sans-serif;
     word-spacing: 1.6px;
     letter-spacing: 1px;
     font-size: 16px;
@@ -24,7 +24,6 @@ header {
     position:sticky;
     top: 0;
     width:100%;
-    font-family: 'roboto medium';
     max-height: 3em;
     height:1.5em;
     background: $primary;
@@ -53,7 +52,7 @@ header {
 
             li a {
               
-                padding: 1em;
+                padding: .6em;
                 &:hover {
                     background: lighten($primary, 20%);
                     
@@ -102,7 +101,6 @@ b {
  h2 {
     margin-top: 1em;
     color:#efbb35;
-    font-family: 'roboto light';
     font-size: 2em;
 }
 
@@ -125,12 +123,11 @@ b {
         }
     
         nav {
-           
+           float:center;
             width:120%;
             ul {   
                 list-style-type: none;
                 display: flexbox;
-                align-items: center;
                 justify-content: center;
                 li a {
                     padding: 0 35px;

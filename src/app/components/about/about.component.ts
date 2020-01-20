@@ -51,7 +51,7 @@ export class AboutComponent implements OnInit {
     },
     {
       title: `BackBone`,
-      path: `devicon-backbonejs-plain colored`
+      path: `devicon-backbonejs-plain `
     },
     {
       title: `Python`,
@@ -71,7 +71,7 @@ export class AboutComponent implements OnInit {
     },
     {
       title: `SSH`,
-      path: `devicon-ssh-plain colored`
+      path: `devicon-ssh-plain`
     },
     {
       title: `Oracle db`,
@@ -103,7 +103,7 @@ export class AboutComponent implements OnInit {
     },
     {
       title:`Express`,
-      path: `devicon-express-original colored`
+      path: `devicon-express-original `
     },
     {
       title:`NGINX`,

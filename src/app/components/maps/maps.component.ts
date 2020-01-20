@@ -3,7 +3,6 @@ import * as L from "leaflet";
 import { LocationService } from "src/app/services/location.service";
 import { MapconfigService } from "src/app/services/mapconfig.service";
 import { ApiService } from "src/app/services/api.service";
-import { stringify } from "querystring";
 
 @Component({
   selector: "app-maps",

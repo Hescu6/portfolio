@@ -46,7 +46,8 @@ export class AppComponent {
     dialogConfig.height = '70%';
     dialogConfig.width = '60em';
     dialogConfig.autoFocus = true;
-
+    dialogConfig.disableClose = true;
+  
     const dialogRef = this.dialog.open(ContactDialogComponent, dialogConfig);
 
     dialogRef.afterClosed().subscribe(result => {
