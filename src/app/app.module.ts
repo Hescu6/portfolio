@@ -21,6 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MapsComponent } from './components/maps/maps.component';
 import { BackgroundComponent } from './components/background/background.component';
 import { MarketsComponent } from './components/markets/markets.component';
+import { StockChartComponent } from './components/stock-chart/stock-chart.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { MarketsComponent } from './components/markets/markets.component';
     MapsComponent,
     BackgroundComponent,
     MarketsComponent,
+    StockChartComponent,
   ],
   imports: [
     BrowserModule,

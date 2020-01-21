@@ -1029,6 +1029,8 @@ export class MarketsComponent implements OnInit {
       ]
     }
   ];
+
+
   constructor(
     private mapconfig: MapconfigService,
     private apiService: ApiService
@@ -1055,24 +1057,43 @@ export class MarketsComponent implements OnInit {
 
       layer.setStyle({
         weight: 5,
-        color: "#666",
+        color: "red",
         dashArray: "",
-        fillOpacity: 0.7
+        fillOpacity: 0.3
       });
 
       if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
         layer.bringToFront();
       }
     }
-    var geojson;
 
     function resetHighlight(e) {
       geojson.resetStyle(e.target);
     }
 
-    function zoomToFeature(e) {
-      // this.map.fitBounds(e.target.getBounds());
-      console.log(e)
+    const zoomToFeature = (e) => {
+      this.apiService.getCountry(e.latlng.lat, e.latlng.lng).subscribe(
+        data => {
+          let country = data['address']['country'];
+          console.log(country)
+
+          this.apiService.getStockData({name:'hello', kind:"BULGAR"}).subscribe( data => {
+            console.log("Response from API",data)
+            L.popup()
+              .setLatLng(e.latlng)
+              .setContent(
+                `<strong>${country}</strong><br>`
+                //TODO ADD SYMBOL too
+              )
+              .addTo(this.map)
+              .openOn(this.map);
+          })
+
+
+        },
+        err => console.error(err)
+      );
+      this.map.fitBounds(e.sourceTarget.getBounds());
     }
 
     function onEachFeature(feature, layer) {

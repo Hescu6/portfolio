@@ -15,6 +15,11 @@ export class ApiService {
     return this.httpClient.get(`${environment.API}/weather/${lat},${lon}`);
   }
 
+  getCountry (lat:string, lon:string){
+    let geocodeAPI:string = `http://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}&zoom=18&addressdetails=1`
+    return this.httpClient.get(geocodeAPI);
+  }
+
 
   sendEmail(data: Object): Promise<Object> {
     const headers = new HttpHeaders();
@@ -23,4 +28,10 @@ export class ApiService {
     return this.httpClient.post(this.emailApi, data, { headers })
       .toPromise();
   }
+
+  getStockData (config:Object) {
+    // return this.httpClient.get(`${environment.API}/api/stock:${config}`);
+    return this.httpClient.get(`http://localhost:3001/api/stock:${config}`);
+  }
+
 }

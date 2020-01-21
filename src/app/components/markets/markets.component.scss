@@ -1,18 +1,36 @@
 .map-container {
-    position: absolute;
-    display: block;
-    width:400px;
-    height: 250px;
-    left:1.5em;
-    top: 5em;
+  position: absolute;
+  display: block;
+  width: 400px;
+  height: 250px;
+  left: 1.5em;
+  top: 5em;
+}
+
+.map-frame {
+  border: 2px solid black;
+  height: 100%;
+}
+
+#map {
+  height: 100%;
+}
+
+.chart {
+  display: inline-block;
+  bottom: 5em;
+}
+
+.container {
+  margin: 0 auto;
+}
+@media only screen and (max-width: 690px) {
+  .map-container {   
+    width : 100%;
+
   }
-  
-  .map-frame {
-    border: 2px solid black;
-    height: 100%;
+  .chart {
+    width: 100%;
   
   }
-  
-  #map {
-    height: 100%;
-  }
+}
