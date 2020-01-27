@@ -16,7 +16,7 @@ export class ApiService {
   }
 
   getCountryBordersETF(borders:string) {
-    return this.httpClient.get(`http://localhost:3001/borders/${borders}`);
+    return this.httpClient.get(`${environment.API}/borders/${borders}`);
   }
 
   getCountry (lat:string, lon:string){
@@ -36,7 +36,7 @@ export class ApiService {
 
   getStockData (config:Object) {
     // return this.httpClient.get(`http://localhost:3001/api/stock/${config}`);
-    return this.httpClient.get(`http://localhost:3001/api/stock/${config}`);
+    return this.httpClient.get(`${environment.API}/api/stock/${config}`);
   }
 
 }
