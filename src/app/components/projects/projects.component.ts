@@ -17,6 +17,18 @@ export class ProjectsComponent implements OnInit {
 
   pInfo: pInfoInterface[] = [
     {
+      title: `Countries ETF Charts`,
+      webUrl: `https://hescu6.github.io/portfolio/markets/`,
+      codeUrl: `https://github.com/Hescu6/portfolio/tree/master/src/app/components/markets`,
+      iconUrl: `assets/images/iconmarket.png`,
+      display: 'self',
+      alt: `Countries ETF Charts`,
+      description: `Developed an Angular webpage with an interactive map and chart that
+      displays different ETF's historical prices. The map was made with Leaflet.js
+      and the candlestick chart was made using D3.js. The data is provided by
+      Yahoo Finance and my own API service`
+    },
+    {
       title: `Workflow Builder`,
       webUrl: `https://wfnpr.herokuapp.com/`,
       codeUrl: `NA`,

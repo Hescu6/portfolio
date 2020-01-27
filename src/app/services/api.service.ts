@@ -15,6 +15,10 @@ export class ApiService {
     return this.httpClient.get(`${environment.API}/weather/${lat},${lon}`);
   }
 
+  getCountryBordersETF(borders:string) {
+    return this.httpClient.get(`${environment.API}/borders/${borders}`);
+  }
+
   getCountry (lat:string, lon:string){
     let geocodeAPI:string = `http://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}&zoom=18&addressdetails=1`
     return this.httpClient.get(geocodeAPI);
@@ -30,8 +34,8 @@ export class ApiService {
   }
 
   getStockData (config:Object) {
-    // return this.httpClient.get(`${environment.API}/api/stock:${config}`);
-    return this.httpClient.get(`http://localhost:3001/api/stock:${config}`);
+    return this.httpClient.get(`${environment.API}/api/stock/${config}`);
+    // return this.httpClient.get(`http://localhost:3001/api/stock/${config}`);
   }
 
 }

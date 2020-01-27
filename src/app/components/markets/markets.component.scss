@@ -19,6 +19,7 @@
 .chart {
   display: inline-block;
   bottom: 5em;
+  
 }
 
 .container {
@@ -26,7 +27,7 @@
 }
 @media only screen and (max-width: 690px) {
   .map-container {   
-    width : 100%;
+    width : 90;
 
   }
   .chart {
