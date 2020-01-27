@@ -29,7 +29,7 @@ export class AppComponent {
     },
     {
       iconurl:'assets/icons/resume32.png',
-      weburl:'assets/webRes.pdf',
+      weburl:'assets/Hildebrando_Escudero_resume.pdf',
       alt:'View Resume'
     },
     {
