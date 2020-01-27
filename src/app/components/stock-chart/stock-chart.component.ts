@@ -204,6 +204,17 @@ export class StockChartComponent implements OnInit {
       }
     }
 
+    d3.select('#container')
+    .selectAll('svg').remove();
+
+    d3.select('#container')
+    .selectAll('h2').remove();
+
+    d3.select('#container')
+    .append("h2")
+    .style("color","white")
+    .html(data['country'])
+
 
     var tooltip = d3
       .select("body")

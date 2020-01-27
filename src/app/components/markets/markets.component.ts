@@ -88,6 +88,7 @@ export class MarketsComponent implements OnInit {
                     timestamp: chart['chart']['result'][0]["timestamp"],
                     chart: chart['chart']['result'][0]["indicators"]["quote"][0]
                   };
+                  console.log(candleData)
                   // this.stockChartComponent.chartIt(data['indicators']['quote'][0]['open']);
                   this.stockChartComponent.chartItCandle(candleData);
                 });
