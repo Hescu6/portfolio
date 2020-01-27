@@ -5,7 +5,7 @@
       <mat-card-title>{{card.title}}</mat-card-title>
 
     </mat-card-header>
-    <a href={{card.webUrl}} target="_blank" class="image">
+    <a (click)="openLink(card.webUrl, card.display)" class="image">
       <img mat-card-image matRipple src="{{card.iconUrl}}" alt="{{card.alt}}">
     </a>
     <mat-card-content>
