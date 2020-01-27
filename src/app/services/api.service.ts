@@ -20,9 +20,9 @@ export class ApiService {
   }
 
   getCountry (lat:string, lon:string){
-    let geocodeAPI:string = `http://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}&zoom=18&addressdetails=1`
-    // return this.httpClient.get(`http://localhost:3001/reversegeo/${lat},${lon}`);
-    return this.httpClient.get(geocodeAPI);
+    // let geocodeAPI:string = `http://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}&zoom=18&addressdetails=1`
+    return this.httpClient.get(`${environment.API}/reversegeo/${lat},${lon}`);
+    // return this.httpClient.get(geocodeAPI);
   }
 
 
