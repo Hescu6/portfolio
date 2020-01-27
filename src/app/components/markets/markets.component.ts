@@ -72,7 +72,7 @@ export class MarketsComponent implements OnInit {
               this.apiService
                 .getStockData(country)
                 .subscribe(data => {
-                  console.log("Response from API", JSON.parse(data['data']));
+                  console.log("Response from API",data);
                   let chart = JSON.parse(data['data']);
                   L.popup()
                     .setLatLng(e.latlng)
