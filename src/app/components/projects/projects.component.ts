@@ -23,8 +23,8 @@ export class ProjectsComponent implements OnInit {
       alt: `Countries ETF Charts`,
       description: `Developed an Angular webpage with an interactive map and chart that
       displays different ETF's historical prices. The map was made with Leaflet.js
-      and the candlestick chart was made using D3.js. The data is provided by
-      Yahoo Finance and my own API service`
+      and the candlestick chart was made using D3.js. The data is acquired from Yahoo Finance API
+      and other APIs online`
     },
     {
       title: `Workflow Builder`,

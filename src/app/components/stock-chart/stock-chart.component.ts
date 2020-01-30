@@ -9,12 +9,9 @@ import * as d3 from "src/assets/d3.v5.js";
 export class StockChartComponent implements OnInit {
   constructor() {}
 
-  ngOnInit() {
-    // this.chartIt()
-  }
+  ngOnInit() {}
 
   chartItCandle(data: Object) {
-
     const margin = { top: 15, right: 65, bottom: 235, left: 50 };
     const w = 420 - margin.left - margin.right;
     const h = 400 - margin.top - margin.bottom;
@@ -30,7 +27,7 @@ export class StockChartComponent implements OnInit {
         low: data["chart"]["low"][i].toFixed(2)
       };
     });
-    // console.log('prices',prices);
+
     const months = {
       0: "Jan",
       1: "Feb",
@@ -48,23 +45,23 @@ export class StockChartComponent implements OnInit {
 
     function wrap(text, width) {
       text.each(function() {
-        var text = d3.select(this),
-          words = text
-            .text()
-            .split(/\s+/)
-            .reverse(),
-          word,
-          line = [],
-          lineNumber = 0,
-          lineHeight = 1.1, // ems
-          y = text.attr("y"),
-          dy = parseFloat(text.attr("dy")),
-          tspan = text
-            .text(null)
-            .append("tspan")
-            .attr("x", 0)
-            .attr("y", y)
-            .attr("dy", dy + "em");
+        var text = d3.select(this);
+        var words = text
+          .text()
+          .split(/\s+/)
+          .reverse();
+        var word;
+        var line = [];
+        var lineNumber = 0;
+        var lineHeight = 1.1;
+        var y = text.attr("y");
+        var dy = parseFloat(text.attr("dy"));
+        var tspan = text
+          .text(null)
+          .append("tspan")
+          .attr("x", 0)
+          .attr("y", y)
+          .attr("dy", dy + "em");
         while ((word = words.pop())) {
           line.push(word);
           tspan.text(line.join(" "));
@@ -154,9 +151,8 @@ export class StockChartComponent implements OnInit {
       context
         .select(".brush")
         .call(brush.move, xScale.range().map(t.invertX, t));
-    }
+    }//zoom
 
-    // end of zoom
     function zoomend() {
       var t = d3.event.transform;
       let xScaleZ = t.rescaleX(xScale);
@@ -204,17 +200,18 @@ export class StockChartComponent implements OnInit {
       }
     }
 
-    d3.select('#container')
-    .selectAll('svg').remove();
+    d3.select("#container")
+      .selectAll("svg")
+      .remove();
 
-    d3.select('#container')
-    .selectAll('h2').remove();
+    d3.select("#container")
+      .selectAll("h2")
+      .remove();
 
-    d3.select('#container')
-    .append("h2")
-    .style("color","white")
-    .html(data['country'])
-
+    d3.select("#container")
+      .append("h2")
+      .style("color", "white")
+      .html(data["country"]);
 
     var tooltip = d3
       .select("body")
@@ -223,7 +220,7 @@ export class StockChartComponent implements OnInit {
       .style("padding", "0 10px")
 
       .style("background", "#454b54")
-      .style("font-size","8px")
+      .style("font-size", "8px")
       .style("opacity", 0);
 
     var svg = d3
@@ -231,8 +228,6 @@ export class StockChartComponent implements OnInit {
       .append("svg")
       .attr("width", w + margin.left + margin.right)
       .attr("height", h + margin.top + margin.bottom);
-
-
 
     // define chart dimensions
     var focus = svg
@@ -285,7 +280,6 @@ export class StockChartComponent implements OnInit {
       .style("fill", "none")
       .style("pointer-events", "all")
       .attr("clip-path", "url(#clip)");
-      
 
     // Add x-axis to chart
     var gX = focus
@@ -359,10 +353,12 @@ export class StockChartComponent implements OnInit {
           .duration(200)
           .style("opacity", 0.9);
         tooltip
-          .html(`O:${d.open}\n
+          .html(
+            `O:${d.open}\n
                  C:${d.close}\n
                  H:${d.high}\n
-                 L:${d.low}`)
+                 L:${d.low}`
+          )
           .style("left", d3.event.pageX - 35 + "px")
           .style("top", d3.event.pageY - 30 + "px");
         d3.select(this).style("opacity", 0.5);

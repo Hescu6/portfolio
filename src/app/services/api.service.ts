@@ -1,42 +1,39 @@
-import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { environment } from 'src/environments/environment';
+import { Injectable } from "@angular/core";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { environment } from "src/environments/environment";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class ApiService {
+  constructor(private httpClient: HttpClient) {}
 
-  constructor(private httpClient: HttpClient) { }
-
-  emailApi = `${environment.API}/api/email`
-
-  getWeather(lat:number, lon:number) {
+  //gets weather information given coordinates to display on map
+  getWeather(lat: number, lon: number) {
     return this.httpClient.get(`${environment.API}/weather/${lat},${lon}`);
   }
 
-  getCountryBordersETF(borders:string) {
+  //the geocoordinates for the countries that have an ETF available for display on map
+  getCountryBordersETF(borders: string) {
     return this.httpClient.get(`${environment.API}/borders/${borders}`);
   }
 
-  getCountry (lat:string, lon:string){
-    // let geocodeAPI:string = `http://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}&zoom=18&addressdetails=1`
+  //gets country information given a set of coordinates
+  getCountry(lat: string, lon: string) {
     return this.httpClient.get(`${environment.API}/reversegeo/${lat},${lon}`);
-    // return this.httpClient.get(geocodeAPI);
   }
 
-
+  //sends post to send email
   sendEmail(data: Object): Promise<Object> {
+    const emailApi = `${environment.API}/api/email`;
     const headers = new HttpHeaders();
     headers.set("Content-Type", "application/json");
 
-    return this.httpClient.post(this.emailApi, data, { headers })
-      .toPromise();
+    return this.httpClient.post(emailApi, data, { headers }).toPromise();
   }
 
-  getStockData (config:Object) {
-    // return this.httpClient.get(`http://localhost:3001/api/stock/${config}`);
+  //gets historical data from any stock
+  getStockData(config: Object) {
     return this.httpClient.get(`${environment.API}/api/stock/${config}`);
   }
-
 }
