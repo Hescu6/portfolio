@@ -1,10 +1,12 @@
-.map-container {
-  position: absolute;
+.container {
   display: block;
-  width: 400px;
+  margin: 0 auto;
+}
+.map-container {
+  position: relative;
+  display: block;
+  width: 95%;
   height: 250px;
-  left: 1.5em;
-  top: 5em;
 }
 
 .map-frame {
@@ -17,24 +19,19 @@
 }
 p {
   font-size: 9px;
-  left:2em;
-}
-.chart {
-  display: inline-block;
-  bottom: 5em;
-  
 }
 
-.container {
-  margin: 0 auto;
-}
+
+
+
+
 @media only screen and (max-width: 690px) {
   .map-container {   
-    width : 90;
+   
 
   }
   .chart {
-    width: 100%;
+
   
   }
 }

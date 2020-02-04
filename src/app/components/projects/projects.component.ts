@@ -16,14 +16,14 @@ export class ProjectsComponent implements OnInit {
   pInfo: pInfoInterface[] = [
     {
       title: `Countries ETF Charts`,
-      webUrl: `https://hescu6.github.io/portfolio/markets/`,
+      webUrl: `markets`,
       codeUrl: `https://github.com/Hescu6/portfolio/tree/master/src/app/components/markets`,
       iconUrl: `assets/images/iconmarket.png`,
       display: "self",
       alt: `Countries ETF Charts`,
-      description: `Developed an Angular webpage with an interactive map and chart that
-      displays different ETF's historical prices. The map was made with Leaflet.js
-      and the candlestick chart was made using D3.js. The data is acquired from Yahoo Finance API
+      description: `Interactive map and chart that
+      displays different ETF's historical prices. Leaflet.js and D3.js were used for the map and chart. 
+      The data is acquired from Yahoo Finance API
       and other APIs online`
     },
     {
@@ -33,11 +33,10 @@ export class ProjectsComponent implements OnInit {
       iconUrl: `assets/images/iconworkflow.png`,
       display: "web",
       alt: `NPR Workflow Builder`,
-      description: `Workflow builder for NPR's internal orchestrator. A different
-      API was developed to perform CRUD operations on a set of sample workflows. Upon saving, 
+      description: `Workflow builder for NPR's internal orchestrator. Performs CRUD operations on a set of sample workflows from an API. Upon saving, 
       the workflow is displayed on the console. Application was build with Angular 8 and JointJs`,
       blockInfo: `Code not available, I was allowed to take a
-       modified version upon completing the internship`
+       modified DIST folder upon completing the internship`
     },
     {
       title: `Portfolio API server`,
@@ -90,7 +89,7 @@ export class ProjectsComponent implements OnInit {
     } else if (display == "dialog") {
       this.openDialog(url);
     } else if (display == "self") {
-      this.router.navigate(["/", "markets"]);
+      this.router.navigate(["/", url]);
     }
   }
 

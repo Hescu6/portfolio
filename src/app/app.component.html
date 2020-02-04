@@ -1,40 +1,36 @@
-<header id='header'>
-
-  <div class='container'>
+<header id="header">
+  <div class="container">
     <!-- remove reouterLink'/about' -->
-    <a href='#' routerLink='' class='logo'>Hildebrando's Portfolio</a>
+    <a href="#" routerLink="" class="logo">Hildebrando's Portfolio</a>
     <nav>
       <ul>
-        <li><a href='#' routerLink='/'>Home</a></li>
-        <li><a href='#' routerLink='/projects'>Projects</a></li>
-        <li><a href='#' routerLink='/about'>About</a></li>
+        <li><a href="#" routerLink="/">Home</a></li>
+        <li><a href="#" routerLink="/projects">Projects</a></li>
+        <li><a href="#" routerLink="/about">About</a></li>
       </ul>
     </nav>
   </div>
 </header>
 
-
-<div class='container' id='content'>
+<div class="container" id="content">
   <router-outlet></router-outlet>
 </div>
 
-<footer >
+<footer>
   <nav>
-    <ul class='container'>
+    <ul class="container">
       <li *ngFor="let icon of footerVals">
-
-        <div *ngIf="icon.weburl; then thenurl else elsedialog"></div>
+        <div *ngIf="icon.weburl; then thenurl; else elsedialog"></div>
         <ng-template #thenurl>
-          <a [matTooltip]="icon.alt" href={{icon.weburl}} target="_blank">
-            <img src={{icon.iconurl}}>
+          <a [matTooltip]="icon.alt" href="{{ icon.weburl }}" target="_blank">
+            <img src="{{ icon.iconurl }}" />
           </a>
         </ng-template>
         <ng-template #elsedialog>
           <a [matTooltip]="icon.alt" (click)="openDialog(icon.open)">
-            <img src={{icon.iconurl}}>
+            <img src="{{ icon.iconurl }}" />
           </a>
         </ng-template>
-
       </li>
     </ul>
   </nav>

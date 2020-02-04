@@ -1,146 +1,145 @@
-@import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Ubuntu&display=swap");
 @import "~leaflet/dist/leaflet.css";
 
 $primary: rgb(0, 0, 0);
 
 body {
-    background: #222831;
-    margin: 0 auto;
-    font-family: 'Ubuntu', sans-serif;
-    word-spacing: 1.6px;
-    letter-spacing: 1px;
-    font-size: 16px;
-    color: white;
+  background: #222831;
+  margin: 0 auto;
+  font-family: "Ubuntu", sans-serif;
+  word-spacing: 1.6px;
+  letter-spacing: 1px;
+  font-size: 16px;
+  color: white;
 }
 
 .container {
-    width: 80%;
-    margin: 0 auto;
+  width: 80%;
+  margin: 0 auto;
 }
 
-
 header {
-    z-index: 99 !important;
-    position:sticky;
-    top: 0;
-    width:100%;
-    max-height: 3em;
-    height:1.5em;
-    background: $primary;
-    background-image: linear-gradient(to bottom right, $primary, #222831);
+  z-index: 99 !important;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  max-height: 3em;
+  height: 1.5em;
+  background: $primary;
+  background-image: linear-gradient(to bottom right, $primary, #222831);
 
-    padding: 1em 0;
+  padding: 1em 0;
 
-    a {
-        color: #efbb35;
-        text-decoration: none;
-    }
+  a {
+    color: #efbb35;
+    text-decoration: none;
+  }
 
-    
+  a.logo {
+    font-weight: bold;
+  }
 
-    a.logo {
-        font-weight: bold;
-    }
+  nav {
+    float: right;
 
-    nav {
-        float: right;
+    ul {
+      list-style-type: none;
+      margin: 0 auto;
+      display: inline-flex;
 
-        ul {
-            list-style-type: none;
-            margin: 0;
-            display: flex;
-
-            li a {
-              
-                padding: .6em;
-                &:hover {
-                    background: lighten($primary, 20%);
-                    
-                }
-            }
+      li a {
+        padding: 1em;
+        &:hover {
+          background: lighten($primary, 20%);
         }
+      }
     }
+  }
 }
 
 footer {
-    background: $primary;
-    background-image: linear-gradient(to  bottom right, #222831, $primary);
-    width: 100%;
-    position:fixed;
-    bottom: 0;
-    height:40px;
-    ul {
-        
-        list-style-type: none;
-        text-align: center;
-        padding: 0;
-       li{
-        display:inline-flex;
-       }
-      
-        img {
-            
-            padding:5px 15px ;
-            height:30px;
-                        filter: invert(78%) sepia(97%) saturate(635%) hue-rotate(328deg) brightness(96%) contrast(94%);
-            &:hover {
-                filter: invert(.6);
-            }
-        }
+  background: $primary;
+  background-image: linear-gradient(to bottom right, #222831, $primary);
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  height: 40px;
+  ul {
+    list-style-type: none;
+    text-align: center;
+    padding: 0;
+    li {
+      display: inline-flex;
     }
+
+    img {
+      padding: 5px 15px;
+      height: 30px;
+      filter: invert(78%) sepia(97%) saturate(635%) hue-rotate(328deg)
+        brightness(96%) contrast(94%);
+      &:hover {
+        filter: invert(0.6);
+      }
+    }
+  }
 }
 
 h1 {
-    margin-top: 1em;
+  margin-top: 1em;
 }
 
 b {
-    color:#efbb35;
+  color: #efbb35;
 }
 
- h2 {
-    margin-top: 1em;
-    color:#efbb35;
-    font-size: 2em;
+h2 {
+  margin-top: 1em;
+  color: #efbb35;
+  font-size: 2em;
 }
 
 @media only screen and (max-width: 690px) {
-    footer {
-        height:30px;     
-        ul {     
-            img {
-                height:19px;  
-            }
-        }
+  footer {
+    height: 30px;
+    ul {
+      img {
+        height: 19px;
+      }
     }
-    
+  }
 
-    header {
-        padding: 1em 1em 1em;
-    
-        a.logo {
-            display:none;
-        }
-    
-        nav {
-           float:center;
-            width:120%;
-            ul {   
-                list-style-type: none;
-                display: flexbox;
-                justify-content: center;
-                li a {
-                    padding: 0 35px;
-                    &:hover {
-                        background: darken($primary, 10%);
-                    }
-                }
-            }
-        }
+  header {
+    a.logo {
+      display: none;
     }
 
-    h2 {
-        margin-top: .5em;
-        font-size: 2em;
+    nav {
+      padding: 0;
+      width: 100%;
+      align-items: center;
+      list-style-type: none;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      ul {
+        padding: 0;
+        width: 100%;
+        align-items: center;
+        list-style-type: none;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: nowrap;
+        li a {
+          &:hover {
+            background: darken($primary, 10%);
+          }
+        }
+      }
     }
+  }
+
+  h2 {
+    margin-top: 0.5em;
+    font-size: 2em;
+  }
 }

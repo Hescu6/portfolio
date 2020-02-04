@@ -1,34 +1,45 @@
-import { Component, OnInit } from '@angular/core';
-
-
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-about',
-  templateUrl: './about.component.html',
-  styleUrls: ['./about.component.scss']
+  selector: "app-about",
+  templateUrl: "./about.component.html",
+  styleUrls: ["./about.component.scss"]
 })
 export class AboutComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
+  ngOnInit() {}
 
-  ngOnInit() {
-  }
+  title: string = `Hi there!`;
 
-  title: string = `Software Developer`;
-
-  intro: string = `My name is Hildebrando and I'm a software developer 
+  intro1: string = `My name is Hildebrando and I'm a software developer 
                   in the Washington DC area. I love to solve problems that
-                   require great attention to detail. 
-                  I'm well organized and continuously 
-                  seek opportunities to advance my growth in the
-                   tech industry.`;
+                   require great attention to detail and I'm always curious
+                   about how and why things work.
+                `;
+  intro2: string = `
+                  I used to be the kid that always got in trouble for taking electronics
+                  apart, though I did get praised every time I'd repair the family
+                  computer. I found my passion in software development because it keeps
+                  my curiosity entertained and I love the creative aspect of it. For now,
+                   my main focus is on software development and DevOps. I also
+                  venture into Articial Intelligence (AI) and Data Ccience.
+                `;
+  intro3: string = `
+                  On a personal note, I believe in hard work and honesty. I will always
+                  enjoy a silly joke. As hobbies I like riding motorcycles, swimming, going to comedy
+                  clubs with friends, keeping up to date with market stuff, and working on DIY projects.
+                `;
+  intro4: string = `
+                Click on the "Projects" tab to see some of my work and
+                 shoot me a line or two with "Contact Me" icon below.
+              `;
 
   skillsIntro: string = `Skills used in programming,
                         web development, database design,
-                        artificial intelligence, and cloud services`
+                        artificial intelligence, and cloud services`;
 
   skillsIcons: iconsInterface[] = [
-  
     {
       title: `Node.js`,
       path: `devicon-nodejs-plain colored`
@@ -66,7 +77,7 @@ export class AboutComponent implements OnInit {
       path: `devicon-git-plain colored`
     },
     {
-      title:`BitBucket`,
+      title: `BitBucket`,
       src: `assets/icons/bitbucket.png`
     },
     {
@@ -94,27 +105,26 @@ export class AboutComponent implements OnInit {
       src: `https://img.icons8.com/color/48/000000/firebase.png`
     },
     {
-      title:`Confluence`,
+      title: `Confluence`,
       src: `assets/icons/confluence.png`
     },
     {
-      title:`Bamboo`,
+      title: `Bamboo`,
       src: `assets/icons/bamboo.png`
     },
     {
-      title:`Express`,
+      title: `Express`,
       path: `devicon-express-original `
     },
     {
-      title:`NGINX`,
+      title: `NGINX`,
       path: `devicon-nginx-original colored`
-    },
-  ]
-
+    }
+  ];
 }
 
 interface iconsInterface {
-  title: string,
-  path?: string,
-  src?:string
+  title: string;
+  path?: string;
+  src?: string;
 }

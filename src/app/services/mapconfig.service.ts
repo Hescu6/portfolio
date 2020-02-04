@@ -5,6 +5,8 @@ import * as L from "leaflet";
 @Injectable({
   providedIn: "root"
 })
+
+//returns different map themes
 export class MapconfigService {
   getTiles(tileSrc?: string) {
     switch (tileSrc) {

@@ -61,17 +61,20 @@ export class ContactDialogComponent implements OnInit {
 
   }
 
+  //closes mat dialog
   closeClick(): void {
     this.dialogRef.close();
   }
 
+  //shows element
   showEl(el: string) {
     let x = document.getElementsByClassName(el) as HTMLCollectionOf<HTMLElement>;
     if (x.length != 0) {
       x[0].style.display = "block";
     }
   }
-
+ 
+  //hides element
   hideEl(el: string) {
     let x = document.getElementsByClassName(el) as HTMLCollectionOf<HTMLElement>;
     if (x.length != 0) {
