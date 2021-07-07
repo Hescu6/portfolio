@@ -5,7 +5,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 # To run Dev
 npm install
-ng serve -o
+npm start
 
 # To test Prod without Deploying
 ng serve --prod
