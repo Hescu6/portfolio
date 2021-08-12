@@ -15,6 +15,26 @@ export class ProjectsComponent implements OnInit {
 
   pInfo: pInfoInterface[] = [
     {
+      title: `Django Blog`,
+      webUrl: `https://www.hescudero.com/`,
+      codeUrl: `https://github.com/Hescu6/django_blog`,
+      iconUrl: `assets/images/blogscreenshot.png`,
+      display: "web",
+      alt: `Django Blog`,
+      description: `Blog made with the Django Framework. The app is deployed to an
+       EC2 instance running an Apache server. An S3 bucket is used to save images and AWS RDS is used for 
+      the database`
+    },
+    {
+      title: `Java Basic Calculator`,
+      webUrl: `https://github.com/Hescu6/Calculator`,
+      codeUrl: `https://github.com/Hescu6/Calculator`,
+      iconUrl: `assets/images/iconCalculator.png`,
+      display: "self",
+      alt: `Java Calculator`,
+      description: `Basic calculator made in Java with the Swing library`
+    },
+    {
       title: `Countries ETF Charts`,
       webUrl: `markets`,
       codeUrl: `https://github.com/Hescu6/portfolio/tree/master/src/app/components/markets`,
