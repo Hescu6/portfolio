@@ -12,7 +12,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "ghpages": "ng build --prod"
+    "ghpages": "ng build --prod --output-path docs --base-href /portfolio/"
   },
   "private": true,
   "dependencies": {
@@ -22,6 +22,7 @@
     "@angular/common": "~8.2.14",
     "@angular/compiler": "~8.2.14",
     "@angular/core": "~8.2.14",
+    "@angular/fire": "^5.4.2",
     "@angular/forms": "~8.2.14",
     "@angular/material": "^8.2.3",
     "@angular/platform-browser": "~8.2.14",
@@ -39,7 +40,8 @@
     "rxjs": "~6.4.0",
     "save-dev": "0.0.1-security",
     "tslib": "^1.14.1",
-    "zone.js": "~0.9.1"
+    "zone.js": "~0.9.1",
+    "firebase": ">= 5.5.7 <8"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.803.29",
@@ -62,6 +64,11 @@
     "protractor": "^5.4.4",
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
-    "typescript": "~3.5.3"
+    "typescript": "~3.5.3",
+    "@angular-devkit/architect": "<0.900 || ^0.900.0-0 || ^9.0.0-0",
+    "firebase-tools": "^7.12.0",
+    "fuzzy": "^0.1.3",
+    "inquirer": "^6.2.2",
+    "inquirer-autocomplete-prompt": "^1.0.1"
   }
 }
