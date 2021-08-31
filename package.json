@@ -12,7 +12,10 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "ghpages": "ng build --prod --output-path docs --base-href /portfolio/"
+    "ghpages": "ng build --prod --output-path docs --base-href /portfolio/ && cp /docs/index.html /docs/404.html",
+    "copyindex": "copy docs\\index.html docs\\404.html",
+    "pushghpages": "git add docs/* && git commit -m 'Deploy to GithubPages'"
+
   },
   "private": true,
   "dependencies": {
